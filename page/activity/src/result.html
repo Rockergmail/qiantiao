@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<style>
+.logo{
+	width:0%;
+}	
+
+.page2 {
+  width:320px;
+  margin:0 auto;
+  overflow: hidden;
+}
+
+.share-pic{
+  width:100%;
+  float:right;
+}
+
+.word-wrap {
+  color: #7e7e7e;
+  font-size: 20px;
+  text-align: center;
+}
+
+.funny-img {
+  width: 100%;
+  margin:0 auto;
+  margin-top:15px;
+  max-width:500px;
+}
+
+.result{
+  color:red;
+  font-size:18px;
+  text-align: center;
+  margin:0px;
+  padding: 0px;
+}
+
+.qiantiao{
+  width:320px; overflow:hidden;
+}
+
+.qiantiao img{
+  width:100%;
+  margin-bottom:20px;
+}
+
+.content{
+  position:absolute;top:77px; margin:0 auto;left:0px; right: 0px; color:#333; font-size:18px; z-index:999;  width:240px;text-align: left;
+}
+
+.yourname{
+  color:blue; font-size:22px;
+}
+
+.friname{
+  font-size:22px;
+  color:black;
+}
+
+.names{
+  color:"#EE7600";
+}
+
+.btn-start-r {
+  border: 0 none;
+  padding: 8px;
+  font-size: 16px;
+  width: 48%;
+  float: right;
+  color: #fff;
+  margin-bottom: 10px;
+  background-color: #57c1f2;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  width: 45%;margin-left: 3%;
+}
+
+.btn-share {
+  border: 0 none;
+  padding: 8px;
+  font-size: 16px;
+  width: 48%;
+  float: left;
+  color: #fff;
+  margin-bottom: 10px;
+  background-color: #ff7241;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.paper{
+	position:relative;
+}
+
+.sigh,.content .friname{float:right;padding: 0px;margin:0px;}
+
+	</style>
+	    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?4b93dfaedb3bbc5474c9ff73f0ac9b70";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<div class="page2">
+  <img src='http://w.qiandeer.com/qd/static/lock/images/qiantiao/logo.jpg' class='logo' />
+  <img src='http://w.qiandeer.com/qd/static/lock/images/qiantiao/common/sharev2.png' class='share-pic' />
+
+  <br />
+  <div class='qiantiao'>
+    <div class="word-wrap"><span class='friname names'></span> 欠 <span class='yourname names'></span> ：<p class='result'></p>
+    	<div class='paper'>
+		<img src="http://w.qiandeer.com/qd/static/lock/images/qiantiao/1.jpg" class="funny-img" />
+		<div class='content'>　　今欠 <strong class='yourname'></strong> <span class='result'></span>，经协商约定于2015年11月28日前全部还清，特立此据！<br /><br /><span class=>欠款人签名：</span><strong class='friname'></strong></div>
+	</div>
+	</div>
+    <input type="button" class="btn-share" value="我也测下" />
+	<input type="button" class="btn-start-r" value="免费赚钱还债" />
+  </div>
+</div>
+
+<script src="http://w.qiandeer.com/qd/static/lock/assets/zepto.js"></script>
+<script src='http://w.qiandeer.com/qd/static/lock/lib/md5/dest/md5.min.js'></script>
+<script>
+function getQueryStringArgs(){
+	var	cq=location.search.length>0?location.search.substring(1):'';
+	var items=cq.split('&');
+	var item=null;
+	var name=null;
+	var value=null;
+	var args=[];
+	for(var i=0;i<items.length;i++){
+		var item=items[i].split('=');
+		var name=decodeURIComponent(item[0]);
+		var value=decodeURIComponent(item[1]);
+		if(name.length){
+		args[name]=value;
+		}
+	}
+	return args;
+}
+
+$(function(){
+	_hmt.push(['_trackEvent', 'qt-page-visit', 'click']);
+	var args=getQueryStringArgs();
+	var oYourName2=$('.yourname'), oFriName2=$('.friname');
+	oYourName2.text(args['yourname']);
+	oFriName2.text(args['friname']);
+	var num1=parseInt($.fn.md5(args['yourname']).charAt(0),16)+1;
+	var num2=parseInt($.fn.md5(args['friname']).charAt(0),16)+1;
+	var results=[
+"一台苹果手机",
+"一顿大餐",
+"一个吻",
+"一次秘密旅行",
+"一场电影",
+"一辆豪车",
+"一套豪宅",
+"99朵玫瑰",
+"一台小米手机",
+"一份神秘礼物"
+	];
+	var numx=Math.ceil((num1%num2)%10);
+	$('title').text(args['friname']+' 欠 '+args['yourname']+' ：'+results[numx]+'！有欠条为证！');
+	$('.result').text(results[numx]);
+
+	$('.btn-share').click(function(){
+		location.href='index.html';
+	});
+		$('.btn-start-r').click(function(){
+		_hmt.push(['_trackEvent', 'qt-app-download', 'click']);
+		var u = navigator.userAgent, app = navigator.appVersion;
+		var isWeChat = u.indexOf('MicroMessenger') > -1;
+		var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+		if(isWeChat){
+			location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.holysix.android.screenlock';
+			}
+		else if(isiOS){
+			location.href='http://qiandeer.com?cne=153';
+		}
+		else{
+			location.href='http://lock.qiandeer.com/download?cne=87';
+		}
+	});
+
+})
+</script>
+</body>
+</html>

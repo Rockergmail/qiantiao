@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>我的朋友欠我什么？</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="http://w.qiandeer.com/qd/static/lock/assets/global.css" />
+    <style>
+.page1 {
+  padding: 10px 45px 0;
+  overflow: hidden;
+  max-width: 500px;
+  margin:0 auto;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.title img {
+  width: 100%;
+}
+
+.input-name {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  padding: 10px 0px;
+  font-size: 18px;
+  width: 100%;
+  margin-top: 10px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  text-indent: 1em;
+}
+
+.btn-start {
+  border: 0 none;
+  background-color: #ff7241;
+  color: #fff;
+  margin: 10px auto 20px auto;
+  padding: 10px;
+  font-size: 18px;
+  width: 100%;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  width: 100%; 
+  display:block;
+}
+
+
+    </style>
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?4b93dfaedb3bbc5474c9ff73f0ac9b70";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+  <div class="page1">
+     <div class="title">
+        <img src="http://w.qiandeer.com/qd/static/lock/images/qiantiao/title.png" alt="" class='biaoti'/> 
+        快来抽一个属于你的下半年签吧~
+        <img src="http://w.qiandeer.com/qd/static/lock/images/qiantiao/cover.jpg" class="funny-img" />
+     </div>
+
+     
+
+  <form>
+    <input type="text" class="input-name" id="yourname" placeholder="请输入你的名字"><br>
+    <input type="text" class="input-name" id="friname" placeholder="请输入你朋友的名字"><br>
+    <input type="button" class="btn-start" value="开始测试">
+  </form>
+  </div>
+  <script src="http://w.qiandeer.com/qd/static/lock/assets/zepto.js"></script>
+  <script>$(function(){
+  var oPage1=$('#page1'),oYourName=$('#yourname'),oFriName=$('#friname'),oBtn=$('.btn-start');
+  oBtn.click(function(){
+    if(oYourName.val()=="" || oFriName.val()==""){
+      alert('请输入名字');
+      return false;
+        }
+    else{
+      _hmt.push(['_trackEvent', 'qt-gotest', 'click']);
+      var sSearch='?yourname='+oYourName.val()+'&friname='+oFriName.val();
+      location.href='result.html'+encodeURI(sSearch);
+      return false;
+      }
+});
+})</script>
+</body>
+</html>
